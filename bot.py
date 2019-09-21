@@ -14,17 +14,15 @@ from pypresence import Presence
 import time
 
 # For local running
-#from dotenv import load_dotenv
-#load_dotenv()
-#token = os.getenv('DISCORD_TOKEN')
-#GUILD = os.getenv('DISCORD_GUILD')
+from dotenv import load_dotenv
+load_dotenv()
+token = os.getenv('DISCORD_TOKEN')
+GUILD = os.getenv('DISCORD_GUILD')
 
 # for heroku running, put your token into environment variable
-token = sys.argv[1]
+#token = sys.argv[1]
 
 bot = commands.Bot(command_prefix='!')
-
-
 
 @bot.event
 async def on_ready():
@@ -93,15 +91,6 @@ async def on_error(event, *args, **kwargs):
 async def on_command_error(ctx, error):
     if isinstance(error, commands.errors.CheckFailure):
         await ctx.send('You do not have the correct role for this command.')
-
-client_id = '618658270323933199'  # Fake ID, put your real one here
-RPC = Presence(client_id)  # Initialize the client class
-RPC.connect() # Start the handshake loop
-
-print(RPC.update(state="Listening to", details="!cek <nama-item>"))  # Set the presence
-
-while True:
-    time.sleep(15)
 
 bot.run(token)
 # client.run(token)
