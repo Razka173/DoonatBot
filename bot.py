@@ -1,6 +1,7 @@
 import urllib.request, json
 from urllib.parse import unquote
 import os
+import sys
 
 import random
 import discord
@@ -8,9 +9,10 @@ import discord
 from discord.ext import commands
 from dotenv import load_dotenv
 
-load_dotenv()
-token = os.getenv('DISCORD_TOKEN')
-GUILD = os.getenv('DISCORD_GUILD')
+#load_dotenv()
+#token = os.getenv('DISCORD_TOKEN')
+#GUILD = os.getenv('DISCORD_GUILD')
+token = sys.argv[1]
 
 bot = commands.Bot(command_prefix='!')
 
