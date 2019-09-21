@@ -1,6 +1,4 @@
 git+https://github.com/Rapptz/discord.py@rewrite#egg=discord.py
-discord
-random
-urlib.request
-json
-os
+discord==1.0.1
+discord.py==1.2.3
+python-dotenv==0.10.3
