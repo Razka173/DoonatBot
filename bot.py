@@ -26,9 +26,12 @@ async def on_member_join(member):
     )
 
 @bot.command(name='cek')
-async def cek_harga(ctx, *args):
-    print("masuk fungsi cek harga", *args, type(*args))
-    var_item = urllib.parse.quote(*args)
+async def cek_harga(ctx, *, keyword):
+    print("masuk fungsi cek harga")
+    print(keyword)
+    print(type(keyword))
+    var_item = urllib.parse.quote(keyword)
+    print(var_item)
     var_slim = "&slim=true"
     var_exact = "&exact=false"
     link = "https://www.romexchange.com/api?item=" + var_item + var_slim + var_exact
