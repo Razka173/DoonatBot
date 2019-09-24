@@ -8,18 +8,13 @@ import random
 import discord
 from discord.ext import commands
 
-# Discord Presence
-from pypresence import Presence
-import time
 
 # For local running
-# from dotenv import load_dotenv
-# load_dotenv()
-# token = os.getenv('DISCORD_TOKEN')
-# GUILD = os.getenv('DISCORD_GUILD')
+#from dotenv import load_dotenv
+#load_dotenv()
+#token = os.getenv('DISCORD_TOKEN')
 
 # For heroku running, put your token into environment variable
-#token = sys.argv[1]
 token = os.environ.get('DISCORD_TOKEN')
 
 bot = commands.Bot(command_prefix='!')
