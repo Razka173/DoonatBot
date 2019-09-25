@@ -4,20 +4,29 @@ import os
 import sys
 import random
 
+# For local running
+from dotenv import load_dotenv
+load_dotenv()
+
 # Discord Library
 import discord
 from discord.ext import commands
 
+# For heroku running
+try:
+    print("success get token")
+    token = os.environ.get('DISCORD_TOKEN')
+except:
+    print("This bot running from localhost")
+    token = os.getenv('DISCORD_TOKEN')
 
-# For local running
-#from dotenv import load_dotenv
-#load_dotenv()
-#token = os.getenv('DISCORD_TOKEN')
-
-# For heroku running, put your token into environment variable
-token = os.environ.get('DISCORD_TOKEN')
-
+# Creating bot variable
 bot = commands.Bot(command_prefix='!')
+bot.description = "Bot for find price on http://www.romexchange.com"
+bot.activity = discord.Activity(name="!cek", detail="!cek", type=discord.ActivityType.listening)
+
+pesan = commands.DefaultHelpCommand(dm_help=True)
+bot.help_command = pesan
 
 @bot.event
 async def on_ready():
@@ -32,6 +41,7 @@ async def on_member_join(member):
 
 @bot.command(name='cek')
 async def cek_harga(ctx, *, keyword):
+    print(discord.Message.author.name)
     var_item = urllib.parse.quote(keyword)
     var_slim = "&slim=true"
     var_exact = "&exact=false"
