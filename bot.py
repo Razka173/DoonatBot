@@ -41,7 +41,6 @@ async def on_member_join(member):
 
 @bot.command(name='cek')
 async def cek_harga(ctx, *, keyword):
-    print(discord.Message.author.name)
     var_item = urllib.parse.quote(keyword)
     var_slim = "&slim=true"
     var_exact = "&exact=false"
