@@ -113,7 +113,7 @@ async def info(ctx):
 bot.remove_command('help')
 @bot.command()
 async def help(ctx):
-    embed = discord.Embed(title="Smokie bot", description=bot.description+". List of commands are:", color=0xeee657)
+    embed = discord.Embed(title="SmokieBot", description=bot.description+". List of commands are:", color=0xeee657)
     
     embed.add_field(name=bot_prefix+"cek [item-name]", value="Find price of items with given names (example: "+bot_prefix+"cek minorous card)", inline=False)
     embed.add_field(name=bot_prefix+"info", value="Gives a little info about the bot", inline=False)
