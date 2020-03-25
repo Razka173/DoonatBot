@@ -2,12 +2,13 @@ import urllib.request
 import json
 from urllib.parse import unquote
 import os
-#import sys
 import random
 import datetime
+
 # discord library
 import discord
 from discord.ext import commands
+
 # local Running Library
 from dotenv import load_dotenv
 load_dotenv()
@@ -27,8 +28,8 @@ bot = commands.Bot(command_prefix=bot_prefix)
 bot.description = "Bot for find price on http://www.romexchange.com"
 bot.activity = discord.Activity(name="!cek", detail="!cek", type=discord.ActivityType.listening, start=datetime.datetime.now())
 
-pesan = commands.DefaultHelpCommand(dm_help=True)
-bot.help_command = pesan
+# pesan = commands.DefaultHelpCommand(dm_help=True)
+# bot.help_command = pesan
 
 # Fungsi untuk callback jika bot berhasil koneksi ke discord server
 @bot.event
@@ -121,5 +122,11 @@ async def help(ctx):
 
     await ctx.author.send(embed=embed)
     await ctx.send(embed=embed)
+
+# @bot.command()
+# async def prefix(ctx, arg):
+#     bot.command_prefix = arg
+
+#     await ctx.send("bot prefix change to" + arg)
 
 bot.run(token)
