@@ -73,7 +73,7 @@ async def cek_harga(ctx, *, keyword):
             if arraydata == None:
                 response = "No Item Found"
             else:
-                response = ""
+                response = "Due to Global and SEA being on the same episode as of January 16, 2020, new price data will no longer be added to ROM Exchange. Sincerest apologies for the inconvenience." + "\n"
                 for data in arraydata:
                     response += "**__" + data.get("nama_barang") + "__**" + "\n"
                     response += "SEA Price: " + data.get("harga_sea")
