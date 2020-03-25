@@ -77,7 +77,7 @@ async def cek_harga(ctx, *, keyword):
                 for data in arraydata:
                     response += "**__" + data.get("nama_barang") + "__**" + "\n"
                     response += "SEA Price: " + data.get("harga_sea")
-                    response += " (" + data.get("week_change") + " this week)" + "\n \n"
+                    response += " (" + data.get("week_change") + " last January 16, 2020)" + "\n \n"
         print("operation success")
         await ctx.send(response)
 
